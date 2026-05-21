@@ -76,7 +76,9 @@
       Latest from<br/>
       <span class="it">AquaVision.</span>
     </h1>
-    <p class="subpage-headline-jp">
+    <p class="subpage-headline-jp"
+       data-ja="パートナーシップ、展覧会、メディア掲載 — AquaVision の最新動向をお届けします。"
+       data-en="Partnerships, exhibitions, press coverage — the latest from AquaVision.">
       パートナーシップ、展覧会、メディア掲載 — AquaVision の最新動向をお届けします。
     </p>
   </div>
@@ -225,7 +227,9 @@
 
     </ul>
 
-    <p id="emptyState" style="display:none; text-align:center; padding:80px 0; color:var(--fg-mute); font-family:var(--font-mono); font-size:13px; letter-spacing:.15em;">
+    <p id="emptyState" style="display:none; text-align:center; padding:80px 0; color:var(--fg-mute); font-family:var(--font-mono); font-size:13px; letter-spacing:.15em;"
+       data-ja="該当するニュースはありません"
+       data-en="No news found.">
       該当するニュースはありません
     </p>
   </div>
@@ -306,6 +310,10 @@
     mItems.forEach(function(a,i){ if(texts[i]) a.textContent = texts[i]; });
     var ctas = document.querySelectorAll('.nav-cta-desktop, .mobile-menu-bottom .cta-pill');
     ctas.forEach(function(el){ el.textContent = lang === 'en' ? 'Contact' : 'お問い合わせ'; });
+    document.querySelectorAll('[data-ja]').forEach(function(el){
+      var txt = lang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-ja');
+      if(txt !== null) el.innerHTML = txt;
+    });
     document.querySelectorAll('.lang-toggle button').forEach(function(btn){
       btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
     });
