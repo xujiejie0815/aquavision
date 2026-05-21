@@ -43,7 +43,11 @@ function Nav({ copy, lang, setLang, accent, setAccent }) {
             <button className={lang === 'ja' ? 'active' : ''} onClick={() => setLang('ja')} style={{ backgroundColor: "rgb(7, 12, 21)" }}>JA</button>
             <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')} style={{ color: "rgb(255, 255, 255)" }}>EN</button>
           </div>
-          <a href="#contact" className="cta-pill primary nav-cta-desktop" style={{ height: "37px", borderColor: "rgb(20, 203, 245)", color: "rgb(20, 203, 245)" }}>{copy.nav.contact}</a>
+          <button type="button" className="cta-pill primary nav-cta-desktop" style={{ height: "37px", borderColor: "rgb(20, 203, 245)", color: "rgb(20, 203, 245)" }} onClick={() => window.__openContactModal?.()}>{copy.nav.contact}</button>
+          <div className="lang-toggle nav-lang-mobile" role="group" aria-label="Language">
+            <button className={lang === 'ja' ? 'active' : ''} onClick={() => setLang('ja')}>JA</button>
+            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
+          </div>
           <button
             className={`hamburger ${menuOpen ? 'open' : ''}`}
             onClick={() => setMenuOpen(v => !v)}
@@ -66,10 +70,6 @@ function Nav({ copy, lang, setLang, accent, setAccent }) {
           )}
         </ul>
         <div className="mobile-menu-bottom">
-          <div className="lang-toggle" role="group" aria-label="Language">
-            <button className={lang === 'ja' ? 'active' : ''} onClick={() => setLang('ja')}>JA</button>
-            <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
-          </div>
           <button type="button" className="cta-pill primary" onClick={() => { close(); window.__openContactModal?.(); }}>{copy.nav.contact}</button>
         </div>
       </div>
