@@ -263,7 +263,7 @@
   font-size: clamp(28px, 3.4vw, 44px);
   letter-spacing: 0.005em;
   line-height: 1.4;
-  max-width: 26ch;
+  max-width: none;
   margin-bottom: 56px;
 }
 .news-article-hero{
