@@ -15,7 +15,7 @@
 <!-- NAV -->
 <nav class="nav scrolled" style="border-color: rgb(6, 11, 20); background-color: rgb(6, 11, 20); height: 60px;">
   <a href="index.html#vision" class="brand nav-brand-logo" style="line-height: 37; height: 37px;">
-    <img src="assets/logo-horizontal-final.png" alt="AquaVision" style="width: auto; height: 35px;"/>
+    <img src="assets/aquavision_logo_RGB_02_A.jpg" alt="AquaVision" style="width: auto; height: 35px;"/>
   </a>
   <ul class="nav-menu">
     <li><a href="index.html#vision" style="color: rgb(239, 243, 247);">ビジョン</a></li>
@@ -25,13 +25,43 @@
     <li><a href="index.html#team" style="color: rgb(239, 243, 247);">チーム</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language">
+    <div class="lang-toggle nav-lang-desktop" role="group" aria-label="Language">
       <button class="active" style="background-color: rgb(7, 12, 21);">JA</button>
       <button style="color: rgb(255, 255, 255);">EN</button>
     </div>
-    <a href="index.html#contact" class="cta-pill primary" style="height: 37px; border-color: rgb(20, 203, 245); color: rgb(20, 203, 245);">お問い合わせ</a>
+    <a href="index.html#contact" class="cta-pill primary nav-cta-desktop" style="height: 37px; border-color: rgb(20, 203, 245); color: rgb(20, 203, 245);">お問い合わせ</a>
+    <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+<div class="mobile-menu-overlay" id="menuOverlay" style="display:none;"></div>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul class="mobile-menu-list">
+    <li><a href="index.html#vision">ビジョン</a></li>
+    <li><a href="index.html#about">会社概要</a></li>
+    <li><a href="index.html#services">コンピテンシー</a></li>
+    <li><a href="index.html#works">実績</a></li>
+    <li><a href="index.html#team">チーム</a></li>
+  </ul>
+  <div class="mobile-menu-bottom">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button class="active">JA</button>
+      <button>EN</button>
+    </div>
+    <a href="index.html#contact" class="cta-pill primary">お問い合わせ</a>
+  </div>
+</div>
+<script>
+(function(){
+  var btn=document.getElementById('hamburger'),menu=document.getElementById('mobileMenu'),overlay=document.getElementById('menuOverlay');
+  function openMenu(){btn.classList.add('open');menu.classList.add('open');overlay.style.display='block';document.body.style.overflow='hidden';btn.setAttribute('aria-expanded','true');menu.setAttribute('aria-hidden','false');}
+  function closeMenu(){btn.classList.remove('open');menu.classList.remove('open');overlay.style.display='none';document.body.style.overflow='';btn.setAttribute('aria-expanded','false');menu.setAttribute('aria-hidden','true');}
+  btn.addEventListener('click',function(){btn.classList.contains('open')?closeMenu():openMenu();});
+  overlay.addEventListener('click',closeMenu);
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+})();
+</script>
 
 
 
@@ -113,7 +143,7 @@
             <span class="job-tag">VR / AR / MR</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
       <li class="job-row">
@@ -129,7 +159,7 @@
             <span class="job-tag">Unreal · HLSL</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
       <li class="job-row">
@@ -145,7 +175,7 @@
             <span class="job-tag">PyTorch · Diffusers</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
       <li class="job-row">
@@ -161,7 +191,7 @@
             <span class="job-tag">Production · Logistics</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
       <li class="job-row">
@@ -177,7 +207,7 @@
             <span class="job-tag">英語必須</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
       <li class="job-row">
@@ -193,7 +223,7 @@
             <span class="job-tag">Blender · Maya</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
       <li class="job-row">
@@ -209,7 +239,7 @@
             <span class="job-tag">学生歓迎</span>
           </div>
         </div>
-        <button type="button" class="job-apply">Apply</button>
+        <button type="button" class="job-apply">エントリー</button>
       </li>
 
     </ul>
@@ -226,7 +256,7 @@
       </div>
     </div>
     <ol class="flow-list">
-      <li><span class="flow-num">01</span><span class="flow-step">Apply</span><span class="flow-desc">エントリーフォーム or ポートフォリオを送付</span></li>
+      <li><span class="flow-num">01</span><span class="flow-step">エントリー</span><span class="flow-desc">エントリーフォーム or ポートフォリオを送付</span></li>
       <li><span class="flow-num">02</span><span class="flow-step">Review</span><span class="flow-desc">書類選考（1週間以内に結果連絡）</span></li>
       <li><span class="flow-num">03</span><span class="flow-step">Interview ×2</span><span class="flow-desc">ヒアリング × 技術面接（オンライン可）</span></li>
       <li><span class="flow-num">04</span><span class="flow-step">Trial</span><span class="flow-desc">実技課題 or トライアル（必要に応じて）</span></li>
