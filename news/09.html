@@ -150,5 +150,29 @@
 
 
 
+<script>
+(function(){
+  var JA = ['ビジョン','会社概要','コンピテンシー','実績','チーム'];
+  var EN = ['Vision','About','Competence','Works','Team'];
+  function applyLang(lang){
+    var items = document.querySelectorAll('.nav-menu li a');
+    var texts = lang === 'en' ? EN : JA;
+    items.forEach(function(a,i){ if(texts[i]) a.textContent = texts[i]; });
+    var mItems = document.querySelectorAll('.mobile-menu-list li a');
+    mItems.forEach(function(a,i){ if(texts[i]) a.textContent = texts[i]; });
+    var ctas = document.querySelectorAll('.nav-cta-desktop, .mobile-menu-bottom .cta-pill');
+    ctas.forEach(function(el){ el.textContent = lang === 'en' ? 'Contact' : 'お問い合わせ'; });
+    document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+      btn.classList.toggle('active', btn.textContent.trim().toLowerCase() === lang);
+    });
+    localStorage.setItem('aq_lang', lang);
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(btn){
+    btn.addEventListener('click', function(){ applyLang(btn.textContent.trim().toLowerCase()); });
+  });
+  var saved = localStorage.getItem('aq_lang');
+  if(saved) applyLang(saved);
+})();
+</script>
 </body>
 </html>
