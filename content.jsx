@@ -88,7 +88,8 @@ const COPY = {
         {
           tag: "COMING SOON",
           title: "STORYDIVE THEATER",
-          jp: "WAHHHHHP  ／  VRコンテンツ体験施設",
+          brand: "WAHHHHHP",
+          jp: "ストーリーダイブ・シアター  ／  VRコンテンツ体験施設",
           year: "2026—",
           venue: "Tokyo (TBA)",
           tagline: "A new home for immersive storytelling.",
@@ -274,7 +275,8 @@ const COPY = {
         {
           tag: "COMING SOON",
           title: "STORYDIVE THEATER",
-          jp: "WAHHHHHP  /  Immersive VR Theater",
+          brand: "WAHHHHHP",
+          jp: "ストーリーダイブ・シアター  /  Immersive VR Theater",
           year: "2026—",
           venue: "Tokyo (TBA)",
           tagline: "A new home for immersive storytelling.",

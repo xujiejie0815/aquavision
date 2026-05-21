@@ -1630,6 +1630,15 @@ button{ font: inherit; color: inherit; background: none; border: none; cursor: p
   letter-spacing: -0.02em;
   line-height: 1.0;
 }
+.work-modal-brand{
+  font-family: var(--font-en);
+  font-weight: 600;
+  font-size: clamp(24px, 2.8vw, 40px);
+  letter-spacing: 0.04em;
+  color: var(--fg);
+  margin-top: 10px;
+  line-height: 1.1;
+}
 .work-modal-sub{
   font-family: var(--font-jp);
   font-size: clamp(14px, 1vw, 16px);

@@ -70,7 +70,7 @@ function Nav({ copy, lang, setLang, accent, setAccent }) {
             <button className={lang === 'ja' ? 'active' : ''} onClick={() => setLang('ja')}>JA</button>
             <button className={lang === 'en' ? 'active' : ''} onClick={() => setLang('en')}>EN</button>
           </div>
-          <a href="#contact" className="cta-pill primary" onClick={close}>{copy.nav.contact}</a>
+          <button type="button" className="cta-pill primary" onClick={() => { close(); window.__openContactModal?.(); }}>{copy.nav.contact}</button>
         </div>
       </div>
     </>

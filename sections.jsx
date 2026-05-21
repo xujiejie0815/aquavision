@@ -269,6 +269,7 @@ function WorkModal({ item, onClose }) {
         <div className="work-modal-body">
           <div className="work-modal-tag">{item.tag}</div>
           <h3 className="work-modal-title">{item.title}</h3>
+          {item.brand && <div className="work-modal-brand">{item.brand}</div>}
           <div className="work-modal-sub">{item.jp}</div>
           {item.tagline && <div className="work-modal-tagline">{item.tagline}</div>}
           {item.intro && <p className="work-modal-intro">{item.intro}</p>}
@@ -687,6 +688,11 @@ function Contact({ copy }) {
   const c = copy.contact;
   const [openForm, setOpenForm] = React.useState(false);
   const isJa = copy === COPY.ja;
+
+  React.useEffect(() => {
+    window.__openContactModal = () => setOpenForm(true);
+    return () => { delete window.__openContactModal; };
+  }, []);
 
   React.useEffect(() => {
     if (!openForm) return;
