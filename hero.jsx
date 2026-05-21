@@ -263,7 +263,8 @@ function Hero({ copy, lang }) {
             </span>
           )}
         </h1>
-        <p className="hero-jp reveal in" style={{ fontSize: "15px", width: "500px", height: "83px" }}>{h.headline_jp}</p>
+        <p className="hero-jp hero-jp-pc reveal in">{h.headline_jp}</p>
+        <p className="hero-jp hero-jp-sp reveal in">{h.headline_jp_sp}</p>
         <div className="hero-bottom">
           <div className="hero-stats reveal in">
             {h.stats.map((s, i) =>
