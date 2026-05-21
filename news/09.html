@@ -29,7 +29,7 @@
       <button class="active" style="background-color: rgb(7, 12, 21);">JA</button>
       <button style="color: rgb(255, 255, 255);">EN</button>
     </div>
-    <a href="../index.html#contact" class="cta-pill primary nav-cta-desktop" style="height: 37px; border-color: rgb(20, 203, 245); color: rgb(20, 203, 245);">お問い合わせ</a>
+    <button type="button" class="cta-pill primary nav-cta-desktop" onclick="openContactPopup()">お問い合わせ</button>
     <button class="hamburger" id="hamburger" aria-label="メニュー" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -49,7 +49,7 @@
       <button class="active">JA</button>
       <button>EN</button>
     </div>
-    <a href="../index.html#contact" class="cta-pill primary">お問い合わせ</a>
+    <button type="button" class="cta-pill primary" onclick="openContactPopup()">お問い合わせ</button>
   </div>
 </div>
 <script>
@@ -174,5 +174,6 @@
   if(saved) applyLang(saved);
 })();
 </script>
+<script src="../contact-popup.js"></script>
 </body>
 </html>
