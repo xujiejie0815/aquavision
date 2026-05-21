@@ -238,7 +238,7 @@
 
 /* ================ News article (detail page) ================ */
 .news-article{
-  padding: clamp(120px, 18vh, 200px) var(--gutter) clamp(80px, 12vh, 120px);
+  padding: clamp(120px, 18vh, 200px) 0 clamp(80px, 12vh, 120px);
 }
 .news-article-meta{
   display: flex;
