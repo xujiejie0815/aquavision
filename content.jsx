@@ -9,7 +9,7 @@ const COPY = {
     hero: {
       eyebrow: "AquaVision Inc.  —  Immersive XR Experiences",
       headline_en: "Dive Into\nNew Realities",
-      headline_jp: "最先端のXRテクノロジーとアートを融合し、現実と仮想の境界を越え、\n新しいエンターテインメントを提供するビジョン・テクノロジー・カンパニー。",
+      headline_jp: "最先端のXRテクノロジーとアートを融合し、現実と仮想の境界を越える\n新しいエンターテインメントを提供するビジョン・テクノロジー・カンパニー。",
       stats: [
         { v: "95%+", l: "Visitor Satisfaction" },
         { v: "XR · AI", l: "Core Stack" },
