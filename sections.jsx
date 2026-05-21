@@ -687,10 +687,20 @@ function Team({ copy }) {
 function Contact({ copy }) {
   const c = copy.contact;
   const [openForm, setOpenForm] = React.useState(false);
+  const [preType, setPreType] = React.useState('');
   const isJa = copy === COPY.ja;
 
   React.useEffect(() => {
-    window.__openContactModal = () => setOpenForm(true);
+    window.__openContactModal = (type) => {
+      if (type) setPreType(type);
+      setOpenForm(true);
+    };
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('entry') === 'recruit') {
+      setPreType('採用にエントリー');
+      setOpenForm(true);
+      window.history.replaceState({}, '', window.location.pathname);
+    }
     return () => { delete window.__openContactModal; };
   }, []);
 
@@ -728,11 +738,11 @@ function Contact({ copy }) {
           )}
         </div>
       </div>
-      {openForm && <ContactModal lang={isJa ? 'ja' : 'en'} onClose={() => setOpenForm(false)} />}
+      {openForm && <ContactModal lang={isJa ? 'ja' : 'en'} onClose={() => { setOpenForm(false); setPreType(''); }} preType={preType} />}
     </section>);
 }
 
-function ContactModal({ lang, onClose }) {
+function ContactModal({ lang, onClose, preType }) {
   const t = lang === 'ja' ? {
     title: "Contact",
     sub: "お問い合わせ",
@@ -767,7 +777,7 @@ function ContactModal({ lang, onClose }) {
     closeLabel: "Close"
   };
   const [done, setDone] = React.useState(false);
-  const [form, setForm] = React.useState({ type: t.types[0], name: '', company: '', email: '', message: '' });
+  const [form, setForm] = React.useState({ type: preType || t.types[0], name: '', company: '', email: '', message: '' });
   const update = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
   const submit = (e) => {e.preventDefault();setDone(true);};
   return (
